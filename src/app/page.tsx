@@ -2,7 +2,7 @@ import { LatestPost } from "~/app/_components/post";
 import { api, HydrateClient } from "~/trpc/server";
 
 export default async function Home() {
-  void api.post.getLatest.prefetch();
+  await api.post.getLatest.prefetch();
 
   return (
     <HydrateClient>
